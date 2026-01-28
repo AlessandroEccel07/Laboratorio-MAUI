@@ -15,34 +15,35 @@
                 SemanticProperties.HeadingLevel="Level1" />
 
             <Entry 
-                x:Name="franchi"
+                x:Name="EntA"
                 Text=""
-                Placeholder="Inserisci importo"
+                Placeholder="Coefficiente A"
                 Keyboard="Numeric"
                 />
 
             <Entry 
-                x:Name="franchi"
+                x:Name="EntB"
                 Text=""
-                Placeholder="Inserisci importo"
+                Placeholder="Coefficiente B"
                 Keyboard="Numeric"
                 />
 
             <Entry 
-                x:Name="franchi"
+                x:Name="EntC"
                 Text=""
-                Placeholder="Inserisci importo"
+                Placeholder="Coefficiente C"
                 Keyboard="Numeric"
                 />
 
             <Button
                 x:Name="CounterBtn"
-                Text="Click me" 
+                Text="Calcola Radici" 
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
             <Label
-                Text="Welcome to &#10;.NET Multi-platform App UI"
+                x:Name="Risultato"
+                Text="X1= --  X2= --"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />

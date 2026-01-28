@@ -15,7 +15,7 @@
         {
             count++;
 
-            string Convertire = franchi.Text;
+            
 
 
 
