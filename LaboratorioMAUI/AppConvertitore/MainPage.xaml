@@ -21,13 +21,18 @@
             <Button
                 x:Name="CounterBtn"
                 Text="Convertire in Euro" 
-                SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
+                HorizontalOptions="Fill" />
+            <Button
+                x:Name="BtnReset"
+                Text="Pulisci" 
+                Clicked="OnResetClicked"
                 HorizontalOptions="Fill" />
             <Label
                 x:Name="Risultato"
-                Text="Risultato: --"
+                Text="Pronto per convertire"
                 Style="{StaticResource SubHeadline}"/>
+                
         </VerticalStackLayout>
     </ScrollView>
 

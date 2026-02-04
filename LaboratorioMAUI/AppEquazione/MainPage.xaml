@@ -4,50 +4,122 @@
              x:Class="AppEquazione.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
+        <Grid ColumnSpacing="10" RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="400"/>
+            </Grid.ColumnDefinitions>
 
+
+
+            
+                <Label
+                    Grid.Column="0" 
+                    Grid.Row="0" 
+                    Grid.ColumnSpan="2"
+                    Text="Risolutore Equazioni"
+                    Style="{StaticResource Headline}"
+                    TextColor="Purple"
+                    FontAttributes="Bold"
+                    SemanticProperties.HeadingLevel="Level1" />
+            
+                <Label
+                    Grid.Column="0" 
+                    Grid.Row="1" 
+                    Grid.ColumnSpan="2"
+                    TextColor="Grey"
+                    Text="Data l'Equazione: ax²+bx+c=0"
+                    FontSize="20"
+                    
+                    HorizontalTextAlignment="Center"
+                    SemanticProperties.HeadingLevel="Level1" />
 
             <Label
-                Text="Risolvitore Equazioni di 2o grado"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
-
-            <Entry 
-                x:Name="EntA"
-                Text=""
-                Placeholder="Coefficiente A"
-                Keyboard="Numeric"
-                />
-
-            <Entry 
-                x:Name="EntB"
-                Text=""
-                Placeholder="Coefficiente B"
-                Keyboard="Numeric"
-                />
-
-            <Entry 
-                x:Name="EntC"
-                Text=""
-                Placeholder="Coefficiente C"
-                Keyboard="Numeric"
-                />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Calcola Radici" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
+                    Grid.Column="0" 
+                    Grid.Row="2" 
+                                      
+                    Text="Coefficiente A:"
+                    FontSize="20"
+                    
+                    HorizontalTextAlignment="Center"
+                    SemanticProperties.HeadingLevel="Level1" />
+            <Entry
+                    Grid.Column="1" 
+                    Grid.Row="2"
+                    x:Name="EntA"
+                    Text=""
+                    Placeholder="Coefficiente A"
+                    Keyboard="Numeric"
+                    />
             <Label
-                x:Name="Risultato"
-                Text="X1= --  X2= --"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
-        </VerticalStackLayout>
+                    Grid.Column="0" 
+                    Grid.Row="3" 
+                                      
+                    Text="Coefficiente B:"
+                    FontSize="20"
+                    
+                    HorizontalTextAlignment="Center"
+                    SemanticProperties.HeadingLevel="Level1" />
+
+            <Entry 
+                    Grid.Column="1" 
+                    Grid.Row="3"                     
+                    x:Name="EntB"
+                    Text=""
+                    Placeholder="Coefficiente B"
+                    Keyboard="Numeric"
+                    />
+            <Label
+                    Grid.Column="0" 
+                    Grid.Row="4" 
+                                 
+                    Text="Coefficiente C:"
+                    FontSize="20"
+                    
+                    HorizontalTextAlignment="Center"
+                    SemanticProperties.HeadingLevel="Level1" />
+
+            <Entry 
+                    Grid.Column="1" 
+                    Grid.Row="4"                     
+                    x:Name="EntC"
+                    Text=""
+                    Placeholder="Coefficiente C"
+                    Keyboard="Numeric"
+                    />
+
+                <Button
+                    Grid.Column="0" 
+                    Grid.Row="5" 
+                    Grid.ColumnSpan="2"
+                    x:Name="CounterBtn"
+                    Text="Calcola Radici" 
+                    SemanticProperties.Hint="Counts the number of times you click"
+                    Clicked="OnCounterClicked"
+                    HorizontalOptions="Fill" />
+                <Label
+                    Grid.Column="0" 
+                    Grid.Row="6" 
+                    Grid.ColumnSpan="2"
+                    BackgroundColor="LightGray"
+                    HorizontalOptions="Fill"
+                    x:Name="Risultato"
+                    TextColor="#1f6331"
+                    Text="X1= --  X2= --"
+                    Style="{StaticResource SubHeadline}"
+                    SemanticProperties.HeadingLevel="Level2"
+                    SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+          
+        </Grid>
     </ScrollView>
 
 </ContentPage>

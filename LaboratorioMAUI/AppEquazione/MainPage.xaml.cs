@@ -20,18 +20,21 @@
                 {
                     double delta = b * b - 4 * a * c;
                     if (delta > 0) 
-                    { 
+                    {
+                        Risultato.TextColor = Colors.Green;
                         double x1= (-b + Math.Sqrt(delta)) / (2 * a);
                         double x2= (-b - Math.Sqrt(delta)) / (2 * a);
-                        Risultato.Text = $"Due Soluzioni Reali Distinte: x1 = {x1}, x2 = {x2}";
+                        Risultato.Text = string.Format($"Due Soluzioni Reali Distinte: x1 = {0:F3}, x2 = {1:F3}", x1, x2);
                     }
                     else if (delta == 0) 
-                    { 
+                    {
+                        Risultato.TextColor = Colors.Blue;
                         double x1 = (-b + Math.Sqrt(delta)) / (2 * a);
-                        Risultato.Text = $"Solo una soluzione x = {x1}";
+                        Risultato.Text = string.Format($"Solo una soluzione x = {0:F3}", x1);
                     }
                     else 
-                    { 
+                    {
+                        Risultato.TextColor = Colors.Red;
                         Risultato.Text = $"Nessuna soluzione nell'insieme dei numeri reali";
                     }
                 }

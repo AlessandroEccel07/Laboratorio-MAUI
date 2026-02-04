@@ -33,8 +33,15 @@
         }
              
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            
         }
+        private void OnResetClicked(object sender, EventArgs e)
+        {
+            franchi.Text = "";
+            Risultato.Text = "Pronto per convertire";
+            franchi.Focus();
+        }
+
     }
 
 }
