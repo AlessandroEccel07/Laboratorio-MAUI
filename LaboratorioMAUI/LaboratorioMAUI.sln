@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppEquazione", "AppEquazion
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloLayout", "HelloLayout\HelloLayout.csproj", "{A2A665A2-C587-43A6-859C-C9F8AD5D58D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppConvertitore.Tests", "AppConvertitore.Tests\AppConvertitore.Tests.csproj", "{0E3B11DA-A81C-436B-B555-94BD4E312465}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{A2A665A2-C587-43A6-859C-C9F8AD5D58D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2A665A2-C587-43A6-859C-C9F8AD5D58D6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A2A665A2-C587-43A6-859C-C9F8AD5D58D6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0E3B11DA-A81C-436B-B555-94BD4E312465}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E3B11DA-A81C-436B-B555-94BD4E312465}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E3B11DA-A81C-436B-B555-94BD4E312465}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E3B11DA-A81C-436B-B555-94BD4E312465}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +58,7 @@ Global
 		{6742852A-B1E2-4A85-A325-B42C7E400469} = {6C83A596-D32D-B35F-00DD-F0C99B673980}
 		{5E6A9425-7EB9-4A6A-B615-0F376923609F} = {6C83A596-D32D-B35F-00DD-F0C99B673980}
 		{A2A665A2-C587-43A6-859C-C9F8AD5D58D6} = {6C83A596-D32D-B35F-00DD-F0C99B673980}
+		{0E3B11DA-A81C-436B-B555-94BD4E312465} = {6C83A596-D32D-B35F-00DD-F0C99B673980}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B804ED22-81CD-43A1-BB6F-A422D7272645}

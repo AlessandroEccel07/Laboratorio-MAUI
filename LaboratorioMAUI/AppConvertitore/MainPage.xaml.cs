@@ -41,6 +41,7 @@
             Risultato.Text = "Pronto per convertire";
             franchi.Focus();
         }
+        
 
     }
 

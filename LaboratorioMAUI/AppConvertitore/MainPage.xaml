@@ -17,21 +17,25 @@
                 Text=""
                 Placeholder="Inserisci importo"
                 Keyboard="Numeric"
+				AutomationId="franchi"
                 />
             <Button
                 x:Name="CounterBtn"
                 Text="Convertire in Euro" 
                 Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
+                HorizontalOptions="Fill"
+				AutomationId="CouterBtn"/>
             <Button
                 x:Name="BtnReset"
                 Text="Pulisci" 
                 Clicked="OnResetClicked"
-                HorizontalOptions="Fill" />
+                HorizontalOptions="Fill"
+				AutomationId="BtnReset"/>
             <Label
                 x:Name="Risultato"
                 Text="Pronto per convertire"
-                Style="{StaticResource SubHeadline}"/>
+                Style="{StaticResource SubHeadline}"
+				/>
                 
         </VerticalStackLayout>
     </ScrollView>
