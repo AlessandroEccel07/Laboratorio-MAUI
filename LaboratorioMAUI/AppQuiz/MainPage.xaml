@@ -4,7 +4,7 @@
              x:Class="AppQuiz.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout VerticalOptions="Center">
+        <VerticalStackLayout VerticalOptions="Center" Spacing="10">
 
             <Label x:Name="ScoreLabel"
                    Text="Punteggio = 0"
@@ -23,7 +23,7 @@
                    HorizontalTextAlignment="Center"
                    FontAttributes="Bold"
                    TextColor="Black"/>
-            <HorizontalStackLayout HorizontalOptions="Center">
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
                 <Button x:Name="TrueButton"
                         Text="Vero"
                         Clicked="OnAnswer_Clicked"
@@ -42,10 +42,18 @@
             <Button x:Name="ResetButton"
                     Text="Reset"
                     Clicked="ResetButton_Clicked"
-                    FontSize="18"
+                    FontSize="20"
                     BackgroundColor="Red"
                     CornerRadius="10"
-                    WidthRequest="100"
+                    WidthRequest="300"
+                    />
+            <Button
+                    x:Name="btnResult"
+                    WidthRequest="300"
+                    Text="Vai a risultati"
+                    FontSize="20"
+                    CornerRadius="10"
+                    Clicked="btnResult_Clicked"
                     />
 
 

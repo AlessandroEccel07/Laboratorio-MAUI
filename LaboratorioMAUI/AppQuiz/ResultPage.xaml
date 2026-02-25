@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppQuiz.ResultPage"
+             Title="ResultPage">
+    <VerticalStackLayout Spacing="10">
+        <Label Text="QUIZ COMPLETATO!"
+               FontSize="35"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               TextColor="Black"
+               />
+        <Frame
+            CornerRadius="10"
+            HeightRequest="200"
+            WidthRequest="1200"
+            BackgroundColor="#edf0ee">
+            <StackLayout>
+                <VerticalStackLayout>
+                    <Label 
+                        Text="Il tuo punteggio"
+                        FontSize="15"
+                        HorizontalTextAlignment="Center"
+                        TextColor="Gray"/>
+                    <Label x:Name="lableScore"
+                        Text="0"
+                        FontSize="60"
+                        FontAttributes="Bold"
+                        HorizontalTextAlignment="Center"
+                        TextColor="{StaticResource Primary}"/>
+                </VerticalStackLayout>
+            </StackLayout>
+        </Frame>
+
+
+    </VerticalStackLayout>
+</ContentPage>

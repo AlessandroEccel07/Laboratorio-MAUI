@@ -12,7 +12,9 @@ namespace AppQuiz
         public MainPage()
         {
             InitializeComponent();
-            ResetButton.IsVisible = false;   
+            ResetButton.IsVisible = false;
+            btnResult.IsVisible = false;
+            
             _questions.Add(new TrueFalseQuestion("Sotiris é greco?", 10, true));
             _questions.Add(new TrueFalseQuestion("Sotiris é Bello?", 15, true));
             _questions.Add(new TrueFalseQuestion("Sotiris é Bhodan?", 15, false));
@@ -37,12 +39,21 @@ namespace AppQuiz
             }
             else
             {
+                Button btn = (Button)sender;
+                bool userAnswer = bool.Parse(btn.CommandParameter.ToString());
+                if (_questions[_currentIndex].CheckAnswer(userAnswer))
+                {
+                    _score += _questions[_currentIndex].Points;
+                }
+                _maxscore += _questions[_currentIndex].Points;
                 ScoreLabel.Text = "Test finito";
                 Domanda.IsVisible = false;
-                QuestionTextLabel.Text = _score+"/"+_maxscore;
+                QuestionTextLabel.IsVisible = false;
                 TrueButton.IsVisible = false;
                 FalseButton.IsVisible = false;
                 ResetButton.IsVisible = true;
+                btnResult.IsVisible = true;
+
 
 
             }
@@ -62,6 +73,16 @@ namespace AppQuiz
         {
             Application.Current.MainPage= new MainPage();
            
+        }
+        private void btnResult_Clicked(object sender, EventArgs e)
+        {
+            OnQuizFinished();
+        }
+        private async void OnQuizFinished()
+        {
+            //Richiamiamo il metodo PushAsync e gli passiamo il nuovo oggetto ResultPage
+            //Attendiamo senzabloccare la pagina grazie ad await e async
+            await Navigation.PushAsync(new ResultPage(_score));
         }
     }
 
