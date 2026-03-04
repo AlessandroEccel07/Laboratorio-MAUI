@@ -39,6 +39,20 @@
                         BackgroundColor="Red"
                         CornerRadius="10"/>
             </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                <Entry x:Name="EntryText"
+                       Text=""
+                       WidthRequest="200"
+                       HeightRequest="40"
+                       />
+                <Button x:Name="SendButton"
+                        Clicked="OnSendButton_Clicked"
+                        Text="Manda la tua risposta"
+                        FontSize="18"
+                        BackgroundColor="Purple"
+                        CornerRadius="10"/>
+            </HorizontalStackLayout>
+            
             <Button x:Name="ResetButton"
                     Text="Reset"
                     Clicked="ResetButton_Clicked"

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,7 +24,7 @@ namespace AppQuiz.Models
 		}
 		private int _points;
 
-		public int Points
+        public int Points
 		{
 			get 
 			{
@@ -47,6 +48,7 @@ namespace AppQuiz.Models
 			_points = points;
 
 		}
-		public abstract bool CheckAnswer(bool userAnswer);
-	}	
+		public abstract bool CheckAnswer(string userAnswer);
+		
+    }	
 }

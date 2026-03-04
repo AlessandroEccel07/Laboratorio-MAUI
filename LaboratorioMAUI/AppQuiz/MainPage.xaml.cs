@@ -18,16 +18,35 @@ namespace AppQuiz
             _questions.Add(new TrueFalseQuestion("Sotiris é greco?", 10, true));
             _questions.Add(new TrueFalseQuestion("Sotiris é Bello?", 15, true));
             _questions.Add(new TrueFalseQuestion("Sotiris é Bhodan?", 15, false));
+            _questions.Add(new OpenQuestion("Come si scrive il nome di Birbas", 15, "Sotiris"));
+            Kind_Of_Question();
             ShowQuestion();
 
         }
 
+        private void Kind_Of_Question()
+        {
+            if (_questions[_currentIndex] is TrueFalseQuestion) 
+            {
+                TrueButton.IsVisible = true;
+                FalseButton.IsVisible = true;
+                EntryText.IsVisible = false;
+                SendButton.IsVisible = false;
+            }
+            else
+            {
+                TrueButton.IsVisible = false;
+                FalseButton.IsVisible = false;
+                EntryText.IsVisible = true;
+                SendButton.IsVisible = true;
+            }
+        }
         private void OnAnswer_Clicked(object sender, EventArgs e) 
         {
             if(_currentIndex < _questions.Count-1)
             {
                 Button btn = (Button)sender;
-                bool userAnswer = bool.Parse(btn.CommandParameter.ToString());
+                string userAnswer = btn.CommandParameter.ToString();
 
                 if (_questions[_currentIndex].CheckAnswer(userAnswer))
                 {
@@ -35,12 +54,13 @@ namespace AppQuiz
                 }
                 _maxscore += _questions[_currentIndex].Points;
                 _currentIndex++;
+                Kind_Of_Question();
                 ShowQuestion();
             }
             else
             {
                 Button btn = (Button)sender;
-                bool userAnswer = bool.Parse(btn.CommandParameter.ToString());
+                string userAnswer = btn.CommandParameter.ToString();
                 if (_questions[_currentIndex].CheckAnswer(userAnswer))
                 {
                     _score += _questions[_currentIndex].Points;
@@ -53,12 +73,55 @@ namespace AppQuiz
                 FalseButton.IsVisible = false;
                 ResetButton.IsVisible = true;
                 btnResult.IsVisible = true;
+                EntryText.IsVisible = false;
+                SendButton.IsVisible = false;
 
 
 
             }
             
         }
+        private void OnSendButton_Clicked(object sender, EventArgs e) 
+        {
+            if(_currentIndex < _questions.Count-1)
+            {
+                Button btn = (Button)sender;
+                string userAnswer = EntryText.Text;
+
+                if (_questions[_currentIndex].CheckAnswer(userAnswer))
+                {
+                    _score += _questions[_currentIndex].Points;
+                }
+                _maxscore += _questions[_currentIndex].Points;
+                _currentIndex++;
+                Kind_Of_Question();
+                ShowQuestion();
+            }
+            else
+            {
+                Button btn = (Button)sender;
+                string userAnswer = EntryText.Text;
+                if (_questions[_currentIndex].CheckAnswer(userAnswer))
+                {
+                    _score += _questions[_currentIndex].Points;
+                }
+                _maxscore += _questions[_currentIndex].Points;
+                ScoreLabel.Text = "Test finito";
+                Domanda.IsVisible = false;
+                QuestionTextLabel.IsVisible = false;
+                TrueButton.IsVisible = false;
+                FalseButton.IsVisible = false;
+                ResetButton.IsVisible = true;
+                btnResult.IsVisible = true; 
+                EntryText.IsVisible = false;
+                SendButton.IsVisible = false;
+
+
+
+            }
+            
+        }
+
         private void ShowQuestion()
         {
             if (_currentIndex < _questions.Count)
@@ -69,9 +132,9 @@ namespace AppQuiz
             }
         }
 
-        private void ResetButton_Clicked(object sender, EventArgs e)
+        private async void ResetButton_Clicked(object sender, EventArgs e)
         {
-            Application.Current.MainPage= new MainPage();
+            await Navigation.PushAsync(new MainPage());
            
         }
         private void btnResult_Clicked(object sender, EventArgs e)
