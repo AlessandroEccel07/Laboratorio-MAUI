@@ -5,6 +5,9 @@ namespace AppQuiz
 {
     public partial class MainPage : ContentPage
     {
+
+        //Percorso dove leggere e salvare il file txt
+
         private List<QuestionBase> _questions = new List<QuestionBase>();
         private int _currentIndex = 0;
         private int _score;
@@ -12,6 +15,7 @@ namespace AppQuiz
         public MainPage()
         {
             InitializeComponent();
+
             ResetButton.IsVisible = false;
             btnResult.IsVisible = false;
             
@@ -23,7 +27,7 @@ namespace AppQuiz
             ShowQuestion();
 
         }
-
+        
         private void Kind_Of_Question()
         {
             if (_questions[_currentIndex] is TrueFalseQuestion) 
@@ -41,6 +45,7 @@ namespace AppQuiz
                 SendButton.IsVisible = true;
             }
         }
+        
         private void OnAnswer_Clicked(object sender, EventArgs e) 
         {
             if(_currentIndex < _questions.Count-1)

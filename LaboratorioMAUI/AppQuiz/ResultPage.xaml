@@ -28,6 +28,13 @@
                         FontAttributes="Bold"
                         HorizontalTextAlignment="Center"
                         TextColor="{StaticResource Primary}"/>
+                    <Label x:Name="BestScore"
+                            Text="Punteggio Migliore:0"
+                            FontSize="30"
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="Center"
+                            TextColor="{StaticResource Primary}"/>
+                    <Image Source="/Company.Customer.Client;component/Views/views/All_Colours.png"/>
                 </VerticalStackLayout>
             </StackLayout>
         </Frame>
