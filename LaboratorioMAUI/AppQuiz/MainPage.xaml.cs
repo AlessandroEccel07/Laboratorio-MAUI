@@ -1,4 +1,5 @@
-﻿using AppQuiz.Models;
+﻿
+using AppQuiz.Models;
 using System.ComponentModel;
 
 namespace AppQuiz
@@ -15,10 +16,9 @@ namespace AppQuiz
         public MainPage()
         {
             InitializeComponent();
-
+            
             ResetButton.IsVisible = false;
             btnResult.IsVisible = false;
-            
             _questions.Add(new TrueFalseQuestion("Sotiris é greco?", 10, true));
             _questions.Add(new TrueFalseQuestion("Sotiris é Bello?", 15, true));
             _questions.Add(new TrueFalseQuestion("Sotiris é Bhodan?", 15, false));

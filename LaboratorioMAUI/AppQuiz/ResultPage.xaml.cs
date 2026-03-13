@@ -33,7 +33,7 @@ public partial class ResultPage : ContentPage
         {
             try
             {
-                File.WriteAllText(_filePath, score.ToString());
+                File.WriteAllText(_filePath, score.ToString()+";"+DateTime.Now.ToString("yyyy-MM-dd"));
             }
             catch (Exception ex)
             {
@@ -49,9 +49,11 @@ public partial class ResultPage : ContentPage
         {
             //Leggere il contenuto del file txt
             string content = File.ReadAllText(_filePath);
+            string[] splitContent = content.Split(';');
             //Variabile locale per contenere il best score
+            string bestSTR= splitContent[0];
             int best;
-            if (int.TryParse(content, out best))
+            if (int.TryParse(bestSTR, out best))
             {
                 return best;
             }
