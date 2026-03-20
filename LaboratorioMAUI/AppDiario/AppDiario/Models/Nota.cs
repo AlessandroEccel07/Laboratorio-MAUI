@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,6 +20,7 @@ namespace AppDiario.Models
 				{ 
 				value = "Sconosciuto"; 
 				}
+				_titolo = value;
 			}
 		}
 		private string _testo;
@@ -28,7 +30,12 @@ namespace AppDiario.Models
 			get { return _testo; }
 			set { _testo = value; }
 		}
-		public static Nota DaRigaAOggetto(string riga)
+        public string DaRigaAOggetto() 
+		{
+			return this.Titolo + ";" + this.Testo;
+		}
+
+        public static Nota DaRigaAOggetto(string riga)
 		{
 			string[] parti = riga.Split(";");
 			if(parti.Length < 2 )
