@@ -40,14 +40,12 @@ namespace AppDiario
                 foreach (string riga in righe)
                 {
                     Nota n = Nota.DaRigaAOggetto(riga);
-
                     if (n != null)
                     {
                         editDisplay.Text = editDisplay.Text + "Titolo: " + n.Titolo + "\n";
                         editDisplay.Text = editDisplay.Text + "Testo: " + n.Testo + "\n";
                         editDisplay.Text = editDisplay.Text + "--------------------\n";
                     }
-
                 }
             }
             else 
